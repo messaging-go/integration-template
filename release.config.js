@@ -1,7 +1,7 @@
+const cfg = process.env.BRANCH == "main" ? ({name: "main"}) : ({name: `${process.env.BRANCH}`, prerelease: "rc"})
 module.exports = {
     branches: [
-        {name: 'main'},
-        {name: `${process.env.BRANCH}`, prerelease: "rc"}
+        cfg
     ],
     plugins: [
         "@semantic-release/commit-analyzer",
