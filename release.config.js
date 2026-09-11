@@ -1,13 +1,18 @@
 module.exports = {
     branches: [
-        'main',
-        {name: ['**', '!main'], prerelease: 'rc'},
+        {name: 'main'},
+        {name: '**', prerelease: "rc"},
+        {name: '*', prerelease: "rc"},
+    ],
+    plugins: [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/github"
     ],
     verifyConditions: [
         "@semantic-release/github"
     ],
-    prepare: [],
     publish: [
         "@semantic-release/github"
-    ],
-};
+    ]
+}
